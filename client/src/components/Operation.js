@@ -5,6 +5,7 @@ import IMG from '../asset';
 import COLORS from '../styles/colors';
 import Loading from './Loading';
 import NotActive from './NotActive';
+import UserInfo from './UserInfo';
 
 const Operation = () => {
     const [firstModalStatus, setFirstModalStatusStatus] = useState(false);
@@ -17,77 +18,75 @@ const Operation = () => {
 
 
     return (
-        <BackgroundColor>
-            <Container>
-                <Row>
-                    <Col lg={6} md={6} xs={12}>
-                        <LeftSide>
-                            <SelectorBorder>
-                                <Selector>
-                                    <StyledRow>
-                                        <Option>Instagram</Option>
-                                        <IconContainer onClick={toggleFirstModal}>
-                                            {(!firstModalStatus) ? <Icon src={IMG.up} alt="icon" /> : <Icon src={IMG.down} alt="icon" /> }
-                                        </IconContainer>
-                                    </StyledRow>
-                                </Selector>
-                                <Selector>
-                                    <StyledRow>
-                                        <Option>Followers</Option>
-                                        <IconContainer onClick={toggleSecondModal}>
-                                            {(!secondModalStatus) ? <Icon src={IMG.up} alt="icon" /> : <Icon src={IMG.down} alt="icon" /> }
-                                        </IconContainer>
-                                    </StyledRow>
-                                </Selector>
-                                <Selector>
-                                    <StyledRow>
-                                        <Option service >-- Choose service</Option>
-                                        <IconContainer onClick={toggleThirdModal}>
-                                            {(!thirdModalStatus) ? <Icon src={IMG.up} alt="icon" /> : <Icon src={IMG.down} alt="icon" /> }
-                                        </IconContainer>
-                                    </StyledRow>
-                                    {thirdModalStatus && 
-                                        <div>
-                                            <OtherOptions>Max 1k (1 day delivery)</OtherOptions>
-                                            <OtherOptions>Max 5k (1 day delivery)</OtherOptions>
-                                            <OtherOptions>Max 15k (1 day delivery)</OtherOptions>
-                                        </div>                                        
-                                    }
-                                </Selector>                                
-                            </SelectorBorder>
-                            <NotActive/>
-                        </LeftSide>
-                    </Col>
-                    <Col lg={6} md={6} xs={12}>
-                        <RightSide>
-                            <TitleContainer>
-                                <BasketIMG src={IMG.basket} alt="basket" />
-                                <Title>Checkout</Title>
-                            </TitleContainer>
-                            <ProcessingContainer>
-                                <ProcessingText>You are ordering ...</ProcessingText>
-                            </ProcessingContainer>
-                            <PromoInput type="text" placeholder="promo code"/>
-                            <PriceContainer>
-                                <PriceText>Price</PriceText>
-                                <Price>0.00 AZN</Price>
-                            </PriceContainer>
-                            <OrderButton>order now</OrderButton>
-                        </RightSide>
-                    </Col>
-                </Row>
-            </Container>
-        </BackgroundColor>
+        <Container>
+            <Row>
+                <Col lg={6} md={6} xs={12}>
+                    <LeftSide>
+                        <SelectorBorder>
+                            <Selector>
+                                <StyledRow>
+                                    <Option>Instagram</Option>
+                                    <IconContainer onClick={toggleFirstModal}>
+                                        {(!firstModalStatus) ? <Icon src={IMG.up} alt="icon" /> : <Icon src={IMG.down} alt="icon" /> }
+                                    </IconContainer>
+                                </StyledRow>
+                            </Selector>
+                            <Selector>
+                                <StyledRow>
+                                    <Option>Followers</Option>
+                                    <IconContainer onClick={toggleSecondModal}>
+                                        {(!secondModalStatus) ? <Icon src={IMG.up} alt="icon" /> : <Icon src={IMG.down} alt="icon" /> }
+                                    </IconContainer>
+                                </StyledRow>
+                            </Selector>
+                            <Selector>
+                                <StyledRow>
+                                    <Option service >-- Choose service</Option>
+                                    <IconContainer onClick={toggleThirdModal}>
+                                        {(!thirdModalStatus) ? <Icon src={IMG.up} alt="icon" /> : <Icon src={IMG.down} alt="icon" /> }
+                                    </IconContainer>
+                                </StyledRow>
+                                {thirdModalStatus && 
+                                    <div>
+                                        <OtherOptions>Max 1k (1 day delivery)</OtherOptions>
+                                        <OtherOptions>Max 5k (1 day delivery)</OtherOptions>
+                                        <OtherOptions>Max 15k (1 day delivery)</OtherOptions>
+                                    </div>                                        
+                                }
+                            </Selector>                                
+                        </SelectorBorder>
+                        <UserInfo/>
+                    </LeftSide>
+                </Col>
+                <Col lg={6} md={6} xs={12}>
+                    <RightSide>
+                        <TitleContainer>
+                            <BasketIMG src={IMG.basket} alt="basket" />
+                            <Title>Checkout</Title>
+                        </TitleContainer>
+                        <ProcessingContainer>
+                            <ProcessingText>You are ordering ...</ProcessingText>
+                        </ProcessingContainer>
+                        <PromoInput type="text" placeholder="promo code"/>
+                        <PriceContainer>
+                            <PriceText>Price</PriceText>
+                            <Price>0.00 AZN</Price>
+                        </PriceContainer>
+                        <OrderButton>order now</OrderButton>
+                        <CurveLeft></CurveLeft>  
+                        <CurveRight></CurveRight>                                                
+                    </RightSide>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
 export default Operation;
 
-const BackgroundColor = styled.div`
-    background-color: ${COLORS.grey};
-`;
-
 const LeftSide = styled.div`
+    margin-top: 20px;
+
     @media (max-width: 800px) {
         padding: 5% 0;
     }
@@ -100,7 +99,7 @@ const SelectorBorder = styled.div`
 const Selector = styled.div`
     border: 1px solid ${COLORS.input};
     border-radius: 20px;
-    padding: 7px 25px 2px;
+    padding: 15px 25px 7px;
     background-color: ${COLORS.input};
     margin: 25px 0;
 `;
@@ -143,10 +142,34 @@ const OtherOptions = styled.h6`
 `;
 
 const RightSide = styled.div`
-    padding: 3% 5%;
+    margin-top: 20px;
+    padding: 20px;
     box-shadow: 0px 0px 20px rgba(105, 105, 105, 0.1);
     border-radius: 20px;
     background-color: ${COLORS.white};
+    position: relative;
+`;
+
+const CurveLeft = styled.div`
+    width: 15px;
+    height: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-color: ${COLORS.grey};
+    position: absolute;
+    bottom: 165px;
+    left: 0;
+`;
+
+const CurveRight = styled.div`
+    width: 15px;
+    height: 40px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background-color: ${COLORS.grey};
+    position: absolute;
+    bottom: 165px;
+    right: 0;
 `;
 
 const TitleContainer = styled.div`

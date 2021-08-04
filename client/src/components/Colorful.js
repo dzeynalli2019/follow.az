@@ -10,7 +10,10 @@ const Colorful = () => {
             <Container>
                 <Row>
                     <Col lg={9} md={8} xs={12}>
-                        <ColorfulIMG src={IMG.colorful} alt="colorful" />
+                        <ColorContainer>
+                            <ColorfulIMG src={IMG.colorful} alt="img" />
+                            <ColorText>Make your social accounts <br/> <Span>colorful</Span></ColorText>
+                        </ColorContainer>
                     </Col>
                     <Col lg={3} md={4} xs={12}>
                         <OrderContainer>
@@ -30,13 +33,36 @@ const Colorful = () => {
 export default Colorful;
 
 const BackgroundColor = styled.div`
-    background-color: ${COLORS.grey};
+    ${'' /* background-color: ${COLORS.grey}; */}
+`;
+
+const ColorContainer = styled.div`
+    width: 100%;
+    position: relative;
 `;
 
 const ColorfulIMG = styled.img`
-    height: 150px;
+    height: 130px;
     width: 100%;
-    margin-left: -20px;
+    margin-top: 25px;
+    border-radius: 20px;
+`;
+
+const ColorText = styled.h1`
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    color: ${COLORS.white};
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-style: normal;
+    line-height: 41px;
+`;
+
+const Span = styled.span`
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 30px;
 `;
 
 const OrderContainer = styled.div`
@@ -45,9 +71,9 @@ const OrderContainer = styled.div`
     justify-content: space-between;
     background-color: ${COLORS.white};
     border-radius: 20px;
-    height: 100px;
+    height: 130px;
     padding: 2% 10%;
-    margin-top: 15px;
+    margin-top: 25px;
     box-shadow: 0px 0px 20px rgba(105, 105, 105, 0.1);
 `;
 
@@ -56,7 +82,7 @@ const StarIMG = styled.img`
 `;
 
 const NumberContainer = styled.div`
-
+    
 `;
 
 const Number = styled.h1`

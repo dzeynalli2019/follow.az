@@ -40,9 +40,6 @@ export default Footer;
 
 const BackgroundColor = styled.div`
     background-color: ${COLORS.grey};
-    ${'' /* position: fixed;
-    bottom: 0;
-    width: 100%; */}
 `;
 
 const StyledFooter = styled.footer`
@@ -62,6 +59,10 @@ const Row = styled.div`
 const LeftSide = styled.div`
     display: flex;
     align-items: center;
+
+    @media (max-width: 800px) {
+        justify-content: space-between;
+    }
 `;
 
 const LinksContainer = styled.div`

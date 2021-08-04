@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
+
 import COLORS from '../styles/colors';
 import IMG from '../asset';
 
@@ -83,6 +84,7 @@ export default FAQ;
 
 const BackgroundColor = styled.div`
     background-color: ${COLORS.grey};
+    padding: 2% 0 ;
 `;
 
 const FAQContainer = styled.div`
@@ -105,7 +107,7 @@ const ListContainer = styled.div`
     box-shadow: 0px 0px 20px rgba(105, 105, 105, 0.1);
     border-radius: 20px;
     padding: 2%;
-    margin: 1% 0;
+    margin: 2% 0;
 `;
 
 const Row = styled.div`
