@@ -3,8 +3,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import IMG from '../asset';
 import COLORS from '../styles/colors';
-import Loading from './Loading';
-import NotActive from './NotActive';
+// import Loading from './Loading';
+// import NotActive from './NotActive';
 import UserInfo from './UserInfo';
 
 const Operation = () => {
@@ -85,11 +85,7 @@ const Operation = () => {
 export default Operation;
 
 const LeftSide = styled.div`
-    margin-top: 20px;
-
-    @media (max-width: 800px) {
-        padding: 5% 0;
-    }
+    margin-top: 40px;
 `;
 
 const SelectorBorder = styled.div`
@@ -142,7 +138,7 @@ const OtherOptions = styled.h6`
 `;
 
 const RightSide = styled.div`
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 20px;
     box-shadow: 0px 0px 20px rgba(105, 105, 105, 0.1);
     border-radius: 20px;

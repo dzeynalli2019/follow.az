@@ -40,6 +40,7 @@ export default Footer;
 
 const BackgroundColor = styled.div`
     background-color: ${COLORS.grey};
+    padding: 0 8%;
 `;
 
 const StyledFooter = styled.footer`

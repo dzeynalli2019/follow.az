@@ -6,6 +6,7 @@ import IMG from '../asset';
 import COLORS from '../styles/colors';
 
 const Header = () => {
+    
     return (
         <BackgroundColor>    
             <Container>
@@ -22,6 +23,10 @@ const Header = () => {
                             </LangaugeContainer>
                         </RightSide>
                     </Row>
+                    <MobileSearchContainer>
+                        <Input type="search" placeholder="Search by Order ID"/>
+                        <SubmitButton><SearchIcon src={IMG.search} alt="search"/></SubmitButton>
+                    </MobileSearchContainer>
                 </StyledHeader>     
             </Container>
         </BackgroundColor>
@@ -32,6 +37,7 @@ export default Header;
 
 const BackgroundColor = styled.div`
     background-color: ${COLORS.grey};
+    padding: 0 8%;
 `;
 
 const StyledHeader = styled.header`
@@ -57,6 +63,20 @@ const SearchContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 750px) {
+        display: none;
+    }
+`;
+
+const MobileSearchContainer = styled.div`
+    display: none;
+
+    @media (max-width: 750px) {
+        margin: 25px 0 10px;
+        width: 100%;
+        display: flex;
+    }
 `;
 
 const Input = styled.input`
@@ -71,6 +91,12 @@ const Input = styled.input`
     ::placeholder {
         color: ${COLORS.placeHolder}
     }
+
+    @media (max-width: 750px) {
+        width: 80%;
+        padding: 15px;
+        height: 40px;
+    }
 `;
 
 const SubmitButton = styled.button`
@@ -83,6 +109,13 @@ const SubmitButton = styled.button`
     justify-content: center;
     height: 30px;
     padding: 0 15px;
+
+    
+    @media (max-width: 750px) {
+        width: 80%;
+        height: 40px;
+        width: 20%;
+    }
 `;
 
 const SearchIcon = styled.img`

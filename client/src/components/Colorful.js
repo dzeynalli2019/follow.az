@@ -75,14 +75,22 @@ const OrderContainer = styled.div`
     padding: 2% 10%;
     margin-top: 25px;
     box-shadow: 0px 0px 20px rgba(105, 105, 105, 0.1);
+
+    @media (max-width: 750px) {
+        justify-content: center;
+    }
 `;
 
 const StarIMG = styled.img`
-
+    @media (max-width: 750px) {
+        margin: 0 20px;
+    }
 `;
 
 const NumberContainer = styled.div`
-    
+    @media (max-width: 750px) {
+        margin: 0 20px;
+    }
 `;
 
 const Number = styled.h1`
